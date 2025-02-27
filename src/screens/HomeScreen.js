@@ -728,29 +728,36 @@ export default function HomeScreen() {
           </Text>
         </View>
 
+    {/* Categories Component */}
         <View testID="categoryList">
-       
+          <Categories
+            categories={categories}
+            activeCategory={activeCategory}
+            handleChangeCategory={handleChangeCategory}
+          />
         </View>
 
+        {/* FoodItems Component */}
         <View testID="foodList">
+          <FoodItems foods={filteredfoods} categories={categories} />
+        </View>
 
-          </View>
       </ScrollView>
     </View>
   );
 }
-
+// Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF", // white
+    backgroundColor: "#FFFFFF",
   },
   scrollContainer: {
     paddingBottom: 50,
-    paddingTop: hp(14), // pt-14 equivalent
+    paddingTop: hp(14),
   },
   headerContainer: {
-    marginHorizontal: wp(4), // mx-4 equivalent
+    marginHorizontal: wp(4),
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
@@ -763,29 +770,29 @@ const styles = StyleSheet.create({
   },
   greetingText: {
     fontSize: hp(1.7),
-    color: "#52525B", // neutral-600
-    fontWeight: "600", // font-semibold
-    backgroundColor: "#F3F4F6", // gray-100
-    paddingHorizontal: wp(2), // px-2
-    paddingVertical: hp(0.5), // py-1
-    borderRadius: 9999, // full rounded
+    color: "#52525B",
+    fontWeight: "600",
+    backgroundColor: "#F3F4F6",
+    paddingHorizontal: wp(2),
+    paddingVertical: hp(0.5),
+    borderRadius: 9999,
     textAlign: "center",
   },
   titleContainer: {
-    marginHorizontal: wp(4), // mx-4
-    marginBottom: hp(2), // mb-2
+    marginHorizontal: wp(4),
+    marginBottom: hp(2),
   },
   title: {
     fontSize: hp(3.8),
-    fontWeight: "600", // font-semibold
-    color: "#52525B", // neutral-600
+    fontWeight: "600",
+    color: "#52525B",
   },
   subtitle: {
     fontSize: hp(3.8),
-    fontWeight: "600", // font-semibold
-    color: "#52525B", // neutral-600
+    fontWeight: "600",
+    color: "#52525B",
   },
   highlight: {
-    color: "#F59E0B", // amber-400
+    color: "#F59E0B",
   },
 });
